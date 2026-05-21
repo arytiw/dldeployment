@@ -1,0 +1,62 @@
+{
+    "input_features": [
+        "time_s",
+        "hot_inlet_temp_C",
+        "cold_inlet_temp_C",
+        "hot_mass_flow_kg_s",
+        "cold_mass_flow_kg_s",
+        "hot_density_kg_m3",
+        "cold_density_kg_m3",
+        "hot_viscosity_Pa_s",
+        "cold_viscosity_Pa_s",
+        "hot_specific_heat_J_kgK",
+        "cold_specific_heat_J_kgK",
+        "hot_thermal_conductivity_W_mK",
+        "cold_thermal_conductivity_W_mK",
+        "tube_diameter_m",
+        "coil_diameter_m",
+        "coil_pitch_m",
+        "number_of_turns",
+        "shell_diameter_m",
+        "pr_hot",
+        "pr_cold",
+        "coil_length_m",
+        "tube_cross_section_area_m2",
+        "tube_surface_area_m2",
+        "shell_cross_section_area_m2",
+        "pitch_ratio",
+        "curvature_ratio",
+        "hydraulic_diameter_m",
+        "hot_velocity_m_s",
+        "cold_velocity_m_s",
+        "re_hot",
+        "re_cold",
+        "dean_number",
+        "hot_heat_capacity_rate_W_K",
+        "cold_heat_capacity_rate_W_K",
+        "c_min_W_K",
+        "c_max_W_K",
+        "capacity_ratio"
+    ],
+    "target_features": [
+        "effectiveness",
+        "pressure_drop_total_Pa",
+        "overall_heat_transfer_coefficient_U_W_m2K"
+    ],
+    "input_dim": 37,
+    "output_dim": 3,
+    "mlp_hidden_dims": [
+        512,
+        256,
+        128
+    ],
+    "dropout": 0.1,
+    "transformer": {
+        "type": "tabular_transformer",
+        "embedding_dim": 64,
+        "num_heads": 8,
+        "num_layers": 4,
+        "ff_dim": 256,
+        "dropout": 0.1
+    }
+}
